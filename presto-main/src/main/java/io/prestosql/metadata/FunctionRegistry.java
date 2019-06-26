@@ -702,9 +702,9 @@ public class FunctionRegistry
                     Joiner.on(", ").join(function.getSignature().getArgumentTypes()),
                     Joiner.on(", ").join(function.getSignature().getTypeVariableConstraints())));
         }
-        String parameters = Joiner.on(", ").join(parameterTypes);
         String message = format("Function %s not registered", name);
         if (!expectedParameters.isEmpty()) {
+            String parameters = Joiner.on(", ").join(parameterTypes);
             String expected = Joiner.on(", ").join(expectedParameters);
             message = format("Unexpected parameters (%s) for function %s. Expected: %s", parameters, name, expected);
         }
